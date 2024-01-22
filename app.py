@@ -11,7 +11,6 @@ Tea,3
 '''
 beverages = pd.read_csv(io.StringIO(csv))
 
-<<<<<<< HEAD
 csv2 = '''
 food_item, food_price
 cookie juice,2.5
