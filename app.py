@@ -8,18 +8,21 @@ con = duckdb.connect(database="data/exercises_sql_tables.duckdb", read_only=Fals
 
 #solution = con.execute(answer).df()
 
+
+
 with st.sidebar:
     theme = st.selectbox(
         "What would you like to review?",
         ("cross_joins", "GroupBy", "window_functions"),
         index=None,
         placeholder="Select a theme...",
-
     )
+
     st.write('You selected:', theme)
 
     exercise = con.execute(f"SELECT * FROM memory_state WHERE theme = '{theme}'").df()
     st.write(exercise)
+
 
 st.header("enter your code:")
 query = st.text_area(label="votre code sql ici", key="user_input")
